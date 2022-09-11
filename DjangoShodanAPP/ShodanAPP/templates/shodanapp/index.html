@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'shodanapp/style.css' %}">
+    <title>Title</title>
+</head>
+<body>
+    <div class="header">
+        <div class="sendingForm">
+            <form id="IP_form" method="post">
+                <input type="text" id="IP_input" placeholder="IP">
+            </form>
+            <button type="submit" form="IP_form">Submit</button>
+        </div>
+    </div>
+    <div class="footer">
+        <a href="https://github.com/JulianKorgol/django-shodan" target="_blank">Shodan Django App</a>
+        <p id="shodanInfo">The data comes from <a href="https://www.shodan.io/" target="_blank">Shodan</a>.</p>
+    </div>
+</body>
+</html>
