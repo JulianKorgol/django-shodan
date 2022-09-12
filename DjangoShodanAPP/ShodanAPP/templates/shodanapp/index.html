@@ -8,12 +8,27 @@
 </head>
 <body>
     <div class="header">
+        {% if shodanApiKeysNames %}
         <div class="sendingForm">
             <form id="IP_form" method="post">
-                <input type="text" id="IP_input" placeholder="IP">
+                {% csrf_token %}
+                <p>Select API KEY, then write IP for search.</p>
+                <select name="APIKey" id="APIKey" style="display: flex; margin: 0 auto 5%; padding: 3px 5px; text-align: center">
+                    {% for key in shodanApiKeysNames %}
+                    <option value="{{ key }}">{{ key }}</option>
+                    {% endfor %}
+                </select>
+                <div style="text-align: center">
+                    <input name="IP_input" type="text" id="IP_input" placeholder="IP" style="text-align: center;">
+                </div>
             </form>
             <button type="submit" form="IP_form">Submit</button>
         </div>
+        {% else %}
+        <div class="noKeys">
+            <p>There are no API keys in the database. Please add one.</p>
+            <a href="./admin">Add API key</a>
+        {% endif %}
     </div>
     <div class="footer">
         <a href="https://github.com/JulianKorgol/django-shodan" target="_blank">Shodan Django App</a>
