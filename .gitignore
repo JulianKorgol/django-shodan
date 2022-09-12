@@ -1,2 +1,4 @@
 *.sqlite3
 .gitignore
+/_admin-credentials.txt
+.idea/
