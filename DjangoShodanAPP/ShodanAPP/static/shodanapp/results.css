@@ -1,0 +1,20 @@
+.finalAnswer h1 {
+    text-align: center;
+}
+
+.finalAnswer p {
+    text-align: center;
+}
+
+.footer {
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #f1f1f1;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 1;
+}

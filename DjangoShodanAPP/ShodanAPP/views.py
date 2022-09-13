@@ -18,8 +18,17 @@ def index(request):
 
         # Run Shodan Search
         shodanAnswer = ShodanSearch(shodanApiKeyName, shodanQuery, 'ip')
-        print(shodanAnswer)
+
         # Operate on data - TODO
+        def FormatData(host):
+            answer = [
+                'IP: {}'.format(host['ip_str']),
+                'Organization: {}'.format(host.get('org', 'n/a')),
+                'Operating System: {}'.format(host.get('os', 'n/a'))
+            ]
 
+            return answer
 
-        return HttpResponse('POST request')
+        FinalAnswer = FormatData(shodanAnswer)
+
+        return render(request, 'shodanapp/results.html', {'FinalAnswer': FinalAnswer})

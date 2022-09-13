@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'shodanapp/results.css' %}">
+    <title>Title</title>  <!-- TODO -->
+</head>
+<body>
+    {% if FinalAnswer %}
+        <div class="finalAnswer">
+            <h1>Shodan Result</h1>
+            {% for answer in FinalAnswer %}
+                <p>{{ answer }}</p>
+            {% endfor %}
+        </div>
+    {% else %}
+        <p>Something went wrong!</p>
+    {% endif %}
+    <div class="footer">
+        <a href="https://github.com/JulianKorgol/django-shodan" target="_blank">Shodan Django App</a>
+        <p id="shodanInfo">The data comes from <a href="https://www.shodan.io/" target="_blank">Shodan</a>.</p>
+    </div>
+</body>
