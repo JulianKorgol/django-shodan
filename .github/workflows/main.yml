@@ -6,6 +6,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-python@v2
+      - run: pip install backports.zoneinfo
       - run: pip install flake8
       - run: pip install -r requirements.txt # install all our dependencies for the project (pip freeze > requirements.txt)
       - run: pytest . # run pytest test
