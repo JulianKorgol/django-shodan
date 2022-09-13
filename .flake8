@@ -1,0 +1,4 @@
+[flake8]
+ignore: E501
+exclude: ./DjangoShodanAPP/test_file.py,./DjangoShodanAPP/DjangoShodanAPP/settings.py,./DjangoShodanAPP/ShodanAPP/tests.py,./DjangoShodanAPP/ShodanAPP/migrations/0001_initial.py,
+extend-exclude: ./venv

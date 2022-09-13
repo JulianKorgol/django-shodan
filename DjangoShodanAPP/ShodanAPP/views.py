@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from .shodanAPIKey import ShodanApiNames
 from .shodan import ShodanSearch
 
+
 def index(request):
     if request.method == 'GET':
         shodanApiKeysNames = ShodanApiNames()

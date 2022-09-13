@@ -2,3 +2,6 @@ To init app:
 python manage.py makemigrations
 python manage.py migrate
 python manage.py createsuperuser
+
+Making list of requirements:
+pip freeze > requirements.txt
