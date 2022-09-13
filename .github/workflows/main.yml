@@ -4,10 +4,10 @@ jobs:
   test_project:
     runs-on: ubuntu-latest # operating system your code will run on
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-python@v2
-      - run: pip install wheel
-      - run: pip install backports.zoneinfo
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
       - run: pip install flake8
       - run: pip install -r requirements.txt # install all our dependencies for the project (pip freeze > requirements.txt)
       - run: pytest . # run pytest test
